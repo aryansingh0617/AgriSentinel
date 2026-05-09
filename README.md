@@ -1,170 +1,207 @@
-# AgriSentinel – Intelligent Agriculture with AI and Blockchain
+<div align="center">
 
-**Live Website:** https://agrisentinel-nu.vercel.app/
+<h1>🌾 AgriSentinel</h1>
 
----
+<p><strong>The Intelligence Layer of Agriculture</strong></p>
 
-## Overview
+<p>AI-powered crop intelligence · Blockchain-verified farm data · Real-time AgriScore</p>
 
-AgriSentinel is an intelligent agriculture platform designed to bring data-driven decision-making, transparency, and trust into farming. It combines machine learning models, a Farm Intelligence API, real-time analytics, and blockchain-backed verification to help farmers, buyers, and institutions make informed and reliable decisions.
+<p>
+  <a href="https://agrisentinel-nu.vercel.app/">
+    <img src="https://img.shields.io/badge/Live%20Demo-agrisentinel--nu.vercel.app-brightgreen?style=flat-square&logo=vercel" alt="Live Demo" />
+  </a>
+  <img src="https://img.shields.io/badge/Next.js-16.2.2-black?style=flat-square&logo=nextdotjs" alt="Next.js" />
+  <img src="https://img.shields.io/badge/TypeScript-5.0-3178C6?style=flat-square&logo=typescript" alt="TypeScript" />
+  <img src="https://img.shields.io/badge/Supabase-Backend-3ECF8E?style=flat-square&logo=supabase" alt="Supabase" />
+  <img src="https://img.shields.io/badge/Blockchain-Smart%20Contracts-F7931A?style=flat-square" alt="Blockchain" />
+</p>
 
-The system introduces a unified scoring mechanism called AgriScore, which evaluates crop health, productivity, and sustainability in a standardized and interpretable way.
+<p><em>Built at Sharda University Hackathon</em></p>
 
----
-
-## Problem
-
-Agriculture today suffers from fragmented data, delayed insights, and a lack of trust infrastructure.
-
-* Farmers often make decisions without accurate, real-time information
-* Crop diseases are detected too late, leading to preventable losses
-* There is no standardized way to evaluate farm productivity or reliability
-* Buyers, insurers, and financial institutions lack verifiable data
-* Existing systems do not ensure data integrity or transparency
+</div>
 
 ---
 
-## Solution
+## What is AgriSentinel?
 
-AgriSentinel addresses these challenges through an integrated system that:
+AgriSentinel is an AI and blockchain-powered agriculture intelligence platform. It ingests real-time soil, weather, and crop data through a **Farm Intelligence API**, runs machine learning models to predict yield and detect disease risk, and produces a standardized **AgriScore** — a single, verifiable trust metric for any farm.
 
-* Analyzes farm, soil, and environmental data using machine learning
-* Utilizes a Farm Intelligence API for real-time weather and field insights
-* Predicts crop health and yield outcomes
-* Detects potential diseases at early stages
-* Generates a dynamic AgriScore for each farm
-* Stores critical data on blockchain to ensure authenticity and trust
-* Provides a clean dashboard with actionable insights
+Every AgriScore is written to a smart contract, making farm insights tamper-proof and auditable by anyone in the supply chain — from banks and insurers to FMCG buyers and government bodies.
+
+---
+
+## The Problem
+
+Agriculture runs on gut feeling and fragmented data.
+
+- Farmers make critical decisions without real-time, accurate soil or weather intelligence
+- Crop diseases are caught too late — after losses have already happened
+- There is no standardized, trustworthy way to evaluate farm productivity
+- Buyers, insurers, and financial institutions can't verify farm data — so they price in the risk
+- Existing agritech tools are siloed and don't talk to each other
+
+---
+
+## The Solution
+
+AgriSentinel brings together four layers in one platform:
+
+| Layer | What it does |
+|---|---|
+| **Farm Intelligence API** | Pulls real-time weather, soil, and field data |
+| **AI/ML Engine** | Predicts yield, flags disease risk, scores crop health |
+| **AgriScore** | Single composite metric — 0 to 100 — for any farm |
+| **Blockchain Layer** | Stores AgriScore on-chain for immutable verification |
 
 ---
 
 ## Key Features
 
-### Crop Health and Yield Prediction
-
-Machine learning models process multiple inputs such as soil conditions, weather patterns, and crop type to predict yield and identify risks.
-
-### Farm Intel API
-
-**Problem & Business Model:**
-Government bodies, FMCG companies, and insurers rely on outdated agricultural data, leading to inefficient decisions and inaccurate risk assessment. AgriSentinel provides **real-time farm intelligence through its Farm Intelligence API**, delivering live insights on crop health, yield, and environmental conditions.
-
-The business operates on a **Data-as-a-Service model**, where enterprises pay for API access and AgriScore analytics. With scalable B2B subscriptions and institutional licensing, AgriSentinel has a strong revenue potential with an **estimated ARR of ₹5–10 Crore in early stages**, scaling significantly as adoption grows across agritech, finance, and supply chain sectors.
-
-
 ### AgriScore System
+A composite 0–100 score reflecting crop health, yield potential, and environmental risk. Farmers use it to improve; lenders and buyers use it to trust.
 
-AgriScore is a composite metric that reflects the overall performance and reliability of a farm. It can be used by farmers to improve productivity and by external stakeholders to assess trustworthiness.
+### Crop Health & Yield Prediction
+ML models process soil type, moisture levels, weather patterns, and crop variety to predict yield and surface risks before they become losses.
 
 ### Disease Detection
+Early-stage disease identification from input data allows timely intervention — before a bad patch becomes a failed harvest.
 
-The system identifies early signs of crop diseases based on input data, enabling timely intervention and reducing potential losses.
+### Farm Intelligence API
+A B2B data API delivering live farm insights to enterprises. Government bodies, FMCG companies, and insurers subscribe for real-time AgriScore analytics on the farms they care about.
 
-### Blockchain Integration
+> **Business model:** Data-as-a-Service with B2B subscriptions and institutional licensing. Estimated early-stage ARR of ₹5–10 Crore, scaling across agritech, finance, and supply chain sectors.
 
-Critical outputs such as AgriScore and farm records are stored on blockchain to ensure immutability, transparency, and verifiability.
+### Blockchain-Verified Records
+AgriScore and critical farm outputs are stored on-chain via smart contracts — immutable, transparent, and independently verifiable.
 
 ### Real-Time Dashboard
-
-Users receive clear, structured insights and recommendations through an intuitive interface, enabling better on-ground decisions.
+A clean, data-dense interface with actionable insights for farmers and stakeholders. No noise, just decisions.
 
 ---
 
 ## System Architecture
 
-The platform follows a modular architecture:
-
-* Frontend handles user interaction and visualization
-* Backend processes requests and manages data flow
-* AI models perform prediction and scoring
-* Farm Intelligence API provides real-time data inputs
-* Blockchain layer ensures secure storage of critical outputs
+```
+User / Farmer
+      │
+      ▼
+ Next.js Frontend  ◄──── Framer Motion UI, Tailwind CSS v4
+      │
+      ▼
+ Supabase Backend  ◄──── Auth, Database, Real-time subscriptions
+      │
+      ├──► Farm Intelligence API  ◄── Weather, soil, field data (real-time)
+      │
+      ├──► Python ML Models  ◄──────── Yield prediction, disease detection
+      │
+      ├──► AgriScore Engine  ◄──────── Composite scoring logic
+      │
+      └──► Smart Contracts  ◄──────── On-chain AgriScore storage (blockchain)
+```
 
 ---
 
-## Technology Stack
+## Tech Stack
 
-Frontend
+**Frontend**
+- [Next.js 16](https://nextjs.org/) — App Router, server components
+- [React 19](https://react.dev/) — Latest concurrent features
+- [Tailwind CSS v4](https://tailwindcss.com/) — Utility-first styling
+- [Framer Motion](https://www.framer.com/motion/) — Animations
+- [Lenis](https://lenis.darkroom.engineering/) — Smooth scrolling
 
-* Next.js
-* React
-* Tailwind CSS
+**Backend & Database**
+- [Supabase](https://supabase.com/) — Postgres database, auth, real-time
+- Node.js — API routes via Next.js
 
-Backend
+**AI / ML**
+- Python — Crop yield prediction and disease detection models
 
-* Node.js
-* Supabase
+**Blockchain**
+- Solidity smart contracts — On-chain AgriScore storage and verification
 
-AI/ML
+**Infrastructure**
+- [Vercel](https://vercel.com/) — Deployment and hosting
 
-* Python-based models
+---
 
-Blockchain
+## Getting Started
 
-* Smart contracts
+### Prerequisites
+- Node.js 18+
+- A [Supabase](https://supabase.com/) project
+- Supabase CLI (for running migrations)
+
+### Installation
+
+```bash
+git clone https://github.com/aryansingh0617/AgriSentinel.git
+cd AgriSentinel
+npm install
+```
+
+### Environment Setup
+
+Create a `.env.local` file in the root directory:
+
+```env
+NEXT_PUBLIC_SUPABASE_URL=your_supabase_project_url
+NEXT_PUBLIC_SUPABASE_ANON_KEY=your_supabase_anon_key
+```
+
+### Run Database Migrations
+
+```bash
+supabase db push
+```
+
+### Start the Dev Server
+
+```bash
+npm run dev
+```
+
+Open [http://localhost:3000](http://localhost:3000) in your browser.
 
 ---
 
 ## How It Works
 
-1. The user provides farm-related data
-2. The system fetches real-time inputs via the Farm Intelligence API
-3. AI models analyze data and generate predictions
-4. AgriScore is computed based on model outputs
-5. Key data is recorded on blockchain
-6. Results are displayed through a dashboard with actionable insights
-
----
-
-## Setup Instructions
-
-Clone the repository and install dependencies:
-
-git clone https://github.com/aryansingh0617/Hackathon-Sharda-University/
-cd agrisentinel
-npm install
-
-Run the development server:
-
-npm run dev
+1. The farmer or operator submits farm data via the dashboard
+2. The Farm Intelligence API fetches real-time weather and soil context
+3. Python ML models analyze the combined data and generate predictions
+4. The AgriScore engine computes a composite 0–100 score
+5. The score and key outputs are written to a smart contract on-chain
+6. The dashboard surfaces insights and recommendations in real time
 
 ---
 
 ## Impact
 
-AgriSentinel is designed to create measurable impact across the agricultural ecosystem:
-
-* Improved decision-making for farmers
-* Reduced crop losses through early detection
-* Increased trust between producers and buyers
-* Better risk assessment for financial institutions
-* Promotion of sustainable agricultural practices
+- **Farmers** — make data-driven decisions instead of guessing
+- **Crop loss reduction** — early disease detection before damage spreads
+- **Supply chain trust** — buyers get verifiable, tamper-proof farm data
+- **Financial inclusion** — banks and insurers can assess farm risk accurately
+- **Sustainability** — data-backed guidance promotes responsible farming practices
 
 ---
 
-## Innovation
+## Roadmap
 
-The core innovation lies in combining predictive intelligence with a verifiable trust layer. While many systems provide analytics, AgriSentinel ensures that critical outputs are both actionable and trustworthy.
-
-The introduction of AgriScore creates a standardized framework that can scale across regions and use cases.
-
----
-
-## Future Scope
-
-* Integration with satellite imagery for large-scale monitoring
-* IoT-based real-time data collection from farms
-* Expansion into mobile platforms for accessibility
-* Collaboration with government and agricultural organizations
+- [ ] Satellite imagery integration for large-scale field monitoring
+- [ ] IoT sensor pipeline for automated real-time data ingestion
+- [ ] Mobile app (React Native) for on-field farmer access
+- [ ] Multi-language support for rural accessibility
+- [ ] Government and agricultural institution partnerships
 
 ---
 
 ## Team
 
-Aryan Singh and Team
+Built by **Aryan Singh** at a Hackathon.
 
 ---
 
-## Conclusion
+## License
 
-AgriSentinel is built with the objective of transforming agriculture into a data-driven and trust-enabled ecosystem. By combining artificial intelligence, real-time farm intelligence, and secure data infrastructure, it delivers both immediate value to farmers and long-term reliability for the entire supply chain.
+This project is open source. See [LICENSE](./LICENSE) for details.
